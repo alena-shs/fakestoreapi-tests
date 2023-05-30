@@ -17,7 +17,7 @@ import static tests.TestData.*;
 
 public class CRUDCartsTests {
     @Test
-    @DisplayName("Add a new product into a cart")
+    @DisplayName("Correct addition of a new cart")
     void addCart() {
         CartBody cartBody = new CartBody();
 
@@ -50,7 +50,7 @@ public class CRUDCartsTests {
     }
 
     @Test
-    @DisplayName("Get all carts")
+    @DisplayName("Get the list of all carts in the database")
     void getAllCarts() {
         step("Send a GET request", () ->
                 given()
@@ -64,7 +64,7 @@ public class CRUDCartsTests {
     }
 
     @Test
-    @DisplayName("Update a user's cart")
+    @DisplayName("Correct updating of a chosen cart")
     void updateProductsInCart() {
         CartBody cartBody = new CartBody();
 
@@ -100,7 +100,7 @@ public class CRUDCartsTests {
     }
 
     @Test
-    @DisplayName("Delete a cart")
+    @DisplayName("Correct deletion of a chosen cart")
     void deleteCart() {
         CartResponse deletedCartResponse = step("Send a DELETE request", () ->
                 given()

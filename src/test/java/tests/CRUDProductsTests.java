@@ -16,7 +16,7 @@ import static tests.TestData.*;
 
 public class CRUDProductsTests {
     @Test
-    @DisplayName("Add a new product")
+    @DisplayName("Correct addition of a new product")
     void addProduct() {
         ProductBody addProductBody = new ProductBody();
         addProductBody.setTitle(defaultProductTitle);
@@ -48,7 +48,7 @@ public class CRUDProductsTests {
     }
 
     @Test
-    @DisplayName("Get all products")
+    @DisplayName("Get the list of all products in the database")
     void getAllProducts() {
         step("Send a GET request", () ->
                 given()
@@ -63,7 +63,7 @@ public class CRUDProductsTests {
     }
 
     @Test
-    @DisplayName("Update an existing product")
+    @DisplayName("Correct updating of a chosen product")
     void updateProduct() {
         ProductBody updateProductBody = new ProductBody();
         updateProductBody.setTitle(defaultProductTitle);
@@ -97,7 +97,7 @@ public class CRUDProductsTests {
     }
 
     @Test
-    @DisplayName("Delete a chosen product")
+    @DisplayName("Correct deletion of a chosen product")
     void deleteProduct() {
         ProductResponse productToDelete = step("Send a GET request", () ->
                 given()
