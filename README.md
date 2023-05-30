@@ -1,5 +1,5 @@
 # :crystal_ball: Automated tests for Fakestore API
-<p align="center"><img title="fakestore" src="images/fsaLogo.png">
+<p align="center"><img width=40% title="fakestore" src="images/fsaLogo.png">
 </p>
 
 ## :page_with_curl:	Contents
@@ -43,11 +43,10 @@
 </p>
 
 + **Java** is the primary programming language for this project.
-+ **Selenide** framework was used for writing the automated tests.
++ **REST Assured** framework was used for writing the automated tests.
 + **JUnit 5** is used as a unit testing framework.
 + **Gradle** is used to build the project.
 + **Jenkins** is used for running the tests.
-+ **Selenoid** is used to launch browsers in **Docker** containers.
 + **Allure Report** is used to visualize test results.
 + **Telegram API** is used for receiving the final report via Telegram Bot.
 
@@ -56,10 +55,6 @@
 # :compass: How to run these tests
 
 ### Using command prompt
-Please note that the following method will run the tests with the following parameters:
-+ Browser: **Google Chrome**
-+ Browser version: **112.0**
-+ Browser size: **1920x1080**
 
 To run the automated tests:
 ```bash
@@ -70,12 +65,8 @@ To get the report:
 allure serve build/allure-results
 ```
 
-### Using [Jenkins](https://jenkins.autotests.cloud/job/c18-Ailinyan-MiniProject15/)
+### Using [Jenkins](https://jenkins.autotests.cloud/job/c18-Ailinyan-FakestoreAPI/)
 
-Please note that the following method will run the tests with the following parameters:
-+ Browser: **Google Chrome**
-+ Browser version: **100.0**
-+ Browser size: **1920x1080**
 
 To run this test through Jenkins, please use this [job](https://jenkins.autotests.cloud/job/c18-Ailinyan-FakestoreAPI/), specially created for this project.
 The environment is set up for the Russian language, to run it please use the button with an :arrow_forward:.
