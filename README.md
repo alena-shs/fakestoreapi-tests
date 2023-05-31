@@ -6,8 +6,8 @@
 + [Test cases run](#runner-test-cases-run)
 + [Instruments used](#toolbox-instruments-used)
 + [How to run these tests](#compass-how-to-run-these-tests)
-    + [Using command prompt](#using-command-prompt)
-    + [Using Jenkins](#using-jenkins)
+  + [Using command prompt](#using-command-prompt)
+  + [Using Jenkins](#using-jenkins)
 + [The final report in Allure Reports](#bar_chart-final-report-in-allure-reports)
 + [Allure TestOps integration](#dart-allure-testops-integration)
 + [Test results](#trophy-test-results)
@@ -16,15 +16,15 @@
 ## :runner: Test cases run
 ### Automated test cases
 - CRUD (create, read, update and delete) products tests
-    - [x] Correct addition of a new product
-    - [x] Get the list of all products in the database
-    - [x] Correct updating of a chosen product
-    - [x] Correct deletion of a chosen product
+  - [x] Correct addition of a new product
+  - [x] Get the list of all products in the database
+  - [x] Correct updating of a chosen product
+  - [x] Correct deletion of a chosen product
 - CRUD (create, read, update and delete) cart tests
-    - [x] Correct addition of a new cart
-    - [x] Get the list of all carts in the database
-    - [x] Correct updating of a chosen cart
-    - [x] Correct deletion of a chosen cart
+  - [x] Correct addition of a new cart
+  - [x] Get the list of all carts in the database
+  - [x] Correct updating of a chosen cart
+  - [x] Correct deletion of a chosen cart
 
 # :toolbox: Instruments used
 <p  align="center">
@@ -143,7 +143,19 @@ This page presents the standard distribution of the tests run by user stories an
 ### Example of a report of an autotest
 
 <p align="center">
-  <img src="images/allureTestOPS result demo.png" alt="Results demo" width="750">
+  <img src="images/Allure Report steps.png" alt="Results demo" width="750">
+</p>
+
+### Attached request information example
+
+<p align="center">
+  <img src="images/Allure Report request.png" alt="Request info" width="750">
+</p>
+
+### Attached request information example
+
+<p align="center">
+  <img src="images/Allure Report response.png" alt="Response info" width="750">
 </p>
 
 ### Telegram notification example
