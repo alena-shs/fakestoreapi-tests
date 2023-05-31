@@ -1,5 +1,9 @@
 package tests;
 
+import io.qameta.allure.Description;
+import io.qameta.allure.Epic;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Owner;
 import models.ProductBody;
 import models.ProductResponse;
 import org.junit.jupiter.api.DisplayName;
@@ -14,9 +18,13 @@ import static org.hamcrest.Matchers.hasItems;
 import static org.hamcrest.Matchers.hasSize;
 import static tests.TestData.*;
 
+@Epic("API Fakestore")
+@Feature("CRUD for products")
+@Owner("Alena Shomanova")
 public class CRUDProductsTests {
     @Test
     @DisplayName("Correct addition of a new product")
+    @Description("POST /products")
     void addProduct() {
         ProductBody addProductBody = new ProductBody();
         addProductBody.setTitle(defaultProductTitle);
@@ -49,6 +57,7 @@ public class CRUDProductsTests {
 
     @Test
     @DisplayName("Get the list of all products in the database")
+    @Description("GET /products")
     void getAllProducts() {
         step("Send a GET request", () ->
                 given()
@@ -64,6 +73,7 @@ public class CRUDProductsTests {
 
     @Test
     @DisplayName("Correct updating of a chosen product")
+    @Description("PUT /products/1")
     void updateProduct() {
         ProductBody updateProductBody = new ProductBody();
         updateProductBody.setTitle(defaultProductTitle);
@@ -98,6 +108,7 @@ public class CRUDProductsTests {
 
     @Test
     @DisplayName("Correct deletion of a chosen product")
+    @Description("DELETE /products/1")
     void deleteProduct() {
         ProductResponse productToDelete = step("Send a GET request", () ->
                 given()

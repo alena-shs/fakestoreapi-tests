@@ -102,9 +102,9 @@ This page presents the standard distribution of the tests run by user stories an
 
 
 
-# :dart: [Allure TestOps](https://allure.autotests.cloud/project/2195/) integration
+# :dart: [Allure TestOps](https://allure.autotests.cloud/project/2481/) integration
 
-> [AllureTestOps project link](https://allure.autotests.cloud/project/2195) (access request: admin@qa.guru)
+> [AllureTestOps project link](https://allure.autotests.cloud/project/2481) (access request: admin@qa.guru)
 
 ### The main dashboard
 <p align="center">
@@ -114,16 +114,6 @@ This page presents the standard distribution of the tests run by user stories an
 ### Project's test plans
 <p align="center">
   <img src="images/allure_testplans.PNG" alt="Test plans" width="650">
-</p>
-
-#### Manual test cases
-<p align="center">
-  <img src="images/testops_testplan1.PNG" alt="Manual test cases" width="750">
-</p>
-
-#### Automated test cases
-<p align="center">
-  <img src="images/testops_testplan2.PNG" alt="Manual test cases" width="750">
 </p>
 
 ### All test cases

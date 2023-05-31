@@ -1,5 +1,9 @@
 package tests;
 
+import io.qameta.allure.Epic;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Owner;
+import jdk.jfr.Description;
 import models.*;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -15,9 +19,13 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import static org.hamcrest.Matchers.hasSize;
 import static tests.TestData.*;
 
+@Epic("API Fakestore")
+@Feature("CRUD for carts")
+@Owner("Alena Shomanova")
 public class CRUDCartsTests {
     @Test
     @DisplayName("Correct addition of a new cart")
+    @Description("POST /carts")
     void addCart() {
         CartBody cartBody = new CartBody();
 
@@ -51,6 +59,7 @@ public class CRUDCartsTests {
 
     @Test
     @DisplayName("Get the list of all carts in the database")
+    @Description("GET /carts")
     void getAllCarts() {
         step("Send a GET request", () ->
                 given()
@@ -65,6 +74,7 @@ public class CRUDCartsTests {
 
     @Test
     @DisplayName("Correct updating of a chosen cart")
+    @Description("PUT /carts/7")
     void updateProductsInCart() {
         CartBody cartBody = new CartBody();
 
@@ -79,7 +89,7 @@ public class CRUDCartsTests {
         cartBody.setProducts(listProducts);
 
         CartResponse updatedCartResponse =
-                step("Send a POST request", () ->
+                step("Send a PUT request", () ->
                 given()
                         .filter(withCustomTemplates())
                         .spec(Specs.requestSpec)
@@ -101,6 +111,7 @@ public class CRUDCartsTests {
 
     @Test
     @DisplayName("Correct deletion of a chosen cart")
+    @Description("DELETE /carts/7")
     void deleteCart() {
         CartResponse deletedCartResponse = step("Send a DELETE request", () ->
                 given()
