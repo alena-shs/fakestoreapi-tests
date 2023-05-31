@@ -1,5 +1,5 @@
 # :crystal_ball: Automated tests for Fakestore API
-<p align="center"><img width=40% title="fakestore" src="images/fsaLogo.png">
+<p align="center"><img width=60% title="fakestore" src="images/fsaLogo.png">
 </p>
 
 ## :page_with_curl:	Contents
@@ -11,7 +11,6 @@
 + [The final report in Allure Reports](#bar_chart-final-report-in-allure-reports)
 + [Allure TestOps integration](#dart-allure-testops-integration)
 + [Test results](#trophy-test-results)
-+ [Jira integration](#ticket-jira-integration)
 
 ## :runner: Test cases run
 ### Automated test cases
@@ -111,11 +110,6 @@ This page presents the standard distribution of the tests run by user stories an
   <img src="images/allureTestOPS dashboards.png" alt="dashboards" width="650">
 </p>
 
-### Project's test plans
-<p align="center">
-  <img src="images/allure_testplans.PNG" alt="Test plans" width="650">
-</p>
-
 ### All test cases
 <p align="center">
   <img src="images/Test cases.png" alt="test cases" width="750">
@@ -129,11 +123,6 @@ This page presents the standard distribution of the tests run by user stories an
 ### Launch details
 <p align="center">
   <img src="images/allureTestOPS launch.png" alt="launch" width="750">
-</p>
-
-### Defects
-<p align="center">
-  <img src="images/testOps_defect.png" alt="defects" width="750">
 </p>
 
 
@@ -161,23 +150,4 @@ This page presents the standard distribution of the tests run by user stories an
 ### Telegram notification example
 <p align="center">
 <img src="images/telegram-notification.png" alt="Telegram" width="550">
-</p>
-
-
-
-# :ticket: [Jira](https://jira.autotests.cloud/) integration
-
-### [Ticket linked with Allure TestOps defect](https://jira.autotests.cloud/browse/HOMEWORK-685)
-<p align="center">
-  <img src="images/jira-issue.PNG" alt="The defect in Jira" width="750">
-</p>
-
-###  [Main page content layout Jira task](https://jira.autotests.cloud/browse/HOMEWORK-677)
-<p align="center">
-  <img src="images/jira-task-main.PNG" alt="The main page layout task" width="750">
-</p>
-
-###  [Search from the main page Jira task](https://jira.autotests.cloud/browse/HOMEWORK-678)
-<p align="center">
-  <img src="images/jira-task-search.PNG" alt="Search from the main page task" width="750">
 </p>
