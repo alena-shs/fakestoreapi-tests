@@ -1,9 +1,6 @@
 package tests;
 
-import io.qameta.allure.Description;
-import io.qameta.allure.Epic;
-import io.qameta.allure.Feature;
-import io.qameta.allure.Owner;
+import io.qameta.allure.*;
 import models.ProductBody;
 import models.ProductResponse;
 import org.junit.jupiter.api.DisplayName;
@@ -19,7 +16,7 @@ import static org.hamcrest.Matchers.hasSize;
 import static tests.TestData.*;
 
 @Epic("API Fakestore")
-@Feature("CRUD for products")
+@Story("CRUD for products")
 @Owner("Alena Shomanova")
 public class CRUDProductsTests {
     @Test
