@@ -160,7 +160,7 @@ This page presents the standard distribution of the tests run by user stories an
 
 ### Telegram notification example
 <p align="center">
-<img src="images/tlgrm.png" alt="Telegram" width="550">
+<img src="images/telegram-notification.png" alt="Telegram" width="550">
 </p>
 
 
