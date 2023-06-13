@@ -90,15 +90,15 @@ public class CRUDCartsTests {
 
         CartResponse updatedCartResponse =
                 step("Send a PUT request", () ->
-                given()
-                        .filter(withCustomTemplates())
-                        .spec(Specs.requestSpec)
-                        .body(cartBody)
-                        .when()
-                        .put("/carts/"+defaultCartId)
-                        .then()
-                        .spec(Specs.successResponseSpec)
-                        .extract().as(CartResponse.class));
+                        given()
+                                .filter(withCustomTemplates())
+                                .spec(Specs.requestSpec)
+                                .body(cartBody)
+                                .when()
+                                .put("/carts/" + defaultCartId)
+                                .then()
+                                .spec(Specs.successResponseSpec)
+                                .extract().as(CartResponse.class));
         step("Verify that the updated cart's ID is correct", () ->
                 assertThat(updatedCartResponse.getId()).isEqualTo(defaultCartId));
         step("Verify that the updated cart's user ID is correct", () ->
@@ -118,7 +118,7 @@ public class CRUDCartsTests {
                         .filter(withCustomTemplates())
                         .spec(Specs.requestSpec)
                         .when()
-                        .delete("/carts/"+ defaultCartId)
+                        .delete("/carts/" + defaultCartId)
                         .then()
                         .spec(Specs.successResponseSpec)
                         .extract().as(CartResponse.class));

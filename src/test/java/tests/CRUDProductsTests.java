@@ -85,7 +85,7 @@ public class CRUDProductsTests {
                         .spec(Specs.requestSpec)
                         .body(updateProductBody)
                         .when()
-                        .put("/products/"+ defaultIdForProducts)
+                        .put("/products/" + defaultIdForProducts)
                         .then()
                         .spec(Specs.successResponseSpec)
                         .extract().as(ProductResponse.class));
@@ -112,7 +112,7 @@ public class CRUDProductsTests {
                         .filter(withCustomTemplates())
                         .spec(Specs.requestSpec)
                         .when()
-                        .get("/products/"+ defaultIdForProducts)
+                        .get("/products/" + defaultIdForProducts)
                         .then()
                         .spec(Specs.successResponseSpec)
                         .extract().as(ProductResponse.class));
@@ -121,7 +121,7 @@ public class CRUDProductsTests {
                         .filter(withCustomTemplates())
                         .spec(Specs.requestSpec)
                         .when()
-                        .delete("/products/"+ defaultIdForProducts)
+                        .delete("/products/" + defaultIdForProducts)
                         .then()
                         .spec(Specs.successResponseSpec).extract().as(ProductResponse.class));
         step("Verify that the deleted product's title is correct", () ->
