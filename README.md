@@ -1,5 +1,5 @@
 # :crystal_ball: Automated tests for Fakestore API
-<p align="center"><img width=60% title="fakestore" src="images/fsaLogo.png">
+<p align="center"><img width=30% title="fakestore" src="images/fsaLogo.png">
 </p>
 
 ## :page_with_curl:	Contents
