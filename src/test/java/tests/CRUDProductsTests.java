@@ -1,7 +1,9 @@
 package tests;
 
-import io.qameta.allure.*;
-import models.ProductBody;
+import io.qameta.allure.Description;
+import io.qameta.allure.Epic;
+import io.qameta.allure.Owner;
+import io.qameta.allure.Story;
 import models.ProductResponse;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -13,24 +15,21 @@ import static io.restassured.RestAssured.given;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import static org.hamcrest.Matchers.hasItems;
 import static org.hamcrest.Matchers.hasSize;
-import static tests.TestData.*;
+import static tests.TestData.defaultIdForProducts;
+import static tests.TestData.defaultUpdatedProductQuantity;
 
 @Epic("API Fakestore")
 @Story("CRUD for products")
 @Owner("Alena Shomanova")
-public class CRUDProductsTests {
+public class CRUDProductsTests extends TestBase {
     @Test
     @DisplayName("Correct addition of a new product")
     @Description("POST /products")
     void addProduct() {
-        ProductBody addProductBody = new ProductBody();
-        addProductBody.setTitle(defaultProductTitle);
-        addProductBody.setPrice(defaultPrice);
-        addProductBody.setDescription(defaultDescription);
-        addProductBody.setImage(defaultImageLink);
-        addProductBody.setCategory(defaultCategory);
-
-        ProductResponse addProductResponse = step("Send a POST request", () ->
+        step("Prepare a body for adding a new product", () ->
+                prepareProductBody()
+        );
+        ProductResponse addProductResponse = step("Send a POST request to add a product with the prepared body", () ->
                 given()
                         .filter(withCustomTemplates())
                         .spec(Specs.requestSpec)
@@ -56,7 +55,7 @@ public class CRUDProductsTests {
     @DisplayName("Get the list of all products in the database")
     @Description("GET /products")
     void getAllProducts() {
-        step("Send a GET request", () ->
+        step("Send a GET request to see all the products, and check the response format", () ->
                 given()
                         .filter(withCustomTemplates())
                         .spec(Specs.requestSpec)
@@ -72,14 +71,10 @@ public class CRUDProductsTests {
     @DisplayName("Correct updating of a chosen product")
     @Description("PUT /products/1")
     void updateProduct() {
-        ProductBody updateProductBody = new ProductBody();
-        updateProductBody.setTitle(defaultProductTitle);
-        updateProductBody.setPrice(defaultPrice);
-        updateProductBody.setDescription(defaultDescription);
-        updateProductBody.setImage(defaultImageLink);
-        updateProductBody.setCategory(defaultCategory);
-
-        ProductResponse updateProductResponse = step("Send a PUT request", () ->
+        step("Prepare a body for updating an already existing product with the given ID", () ->
+                prepareCartBody(defaultIdForProducts, defaultUpdatedProductQuantity)
+        );
+        ProductResponse updateProductResponse = step("Send a PUT request to update the product using the prepared body", () ->
                 given()
                         .filter(withCustomTemplates())
                         .spec(Specs.requestSpec)
@@ -107,7 +102,7 @@ public class CRUDProductsTests {
     @DisplayName("Correct deletion of a chosen product")
     @Description("DELETE /products/1")
     void deleteProduct() {
-        ProductResponse productToDelete = step("Send a GET request", () ->
+        ProductResponse productToDelete = step("GET the product to be deleted", () ->
                 given()
                         .filter(withCustomTemplates())
                         .spec(Specs.requestSpec)
@@ -116,7 +111,7 @@ public class CRUDProductsTests {
                         .then()
                         .spec(Specs.successResponseSpec)
                         .extract().as(ProductResponse.class));
-        ProductResponse deletedProduct = step("Send a DELETE request", () ->
+        ProductResponse deletedProduct = step("Send a DELETE request to delete the product with the given ID", () ->
                 given()
                         .filter(withCustomTemplates())
                         .spec(Specs.requestSpec)

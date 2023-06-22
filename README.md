@@ -64,10 +64,10 @@ To get the report:
 allure serve build/allure-results
 ```
 
-### Using [Jenkins](https://jenkins.autotests.cloud/job/c18-Ailinyan-FakestoreAPI/)
+### Using [Jenkins](https://jenkins.autotests.cloud/job/Students/job/c18-Ailinyan-FakestoreAPI/)
 
 
-To run this test through Jenkins, please use this [job](https://jenkins.autotests.cloud/job/c18-Ailinyan-FakestoreAPI/), specially created for this project.
+To run this test through Jenkins, please use this [job](https://jenkins.autotests.cloud/job/Students/job/c18-Ailinyan-FakestoreAPI/), specially created for this project.
 The environment is set up for the Russian language, to run it please use the button with an :arrow_forward:.
 You can see the results via Allure Reports, or use the link to Allure TestOps.
 
@@ -76,7 +76,7 @@ You can see the results via Allure Reports, or use the link to Allure TestOps.
 </p>
 
 
-# :bar_chart: <a name="AllureReports">Final report in [Allure Reports](https://jenkins.autotests.cloud/job/c18-Ailinyan-MiniProject15/)</a>
+# :bar_chart: <a name="AllureReports">Final report in [Allure Reports](https://jenkins.autotests.cloud/job/Students/job/c18-Ailinyan-FakestoreAPI/allure/)</a>
 
 #### Overview
 The main page of the Allure report contains the following information blocks:
@@ -103,7 +103,7 @@ This page presents the standard distribution of the tests run by user stories an
 
 # :dart: [Allure TestOps](https://allure.autotests.cloud/project/2481/) integration
 
-> [AllureTestOps project link](https://allure.autotests.cloud/project/2481) (access request: admin@qa.guru)
+> [AllureTestOps project link](https://allure.autotests.cloud/project/2481/) (access request: admin@qa.guru)
 
 ### The main dashboard
 <p align="center">
@@ -132,7 +132,7 @@ This page presents the standard distribution of the tests run by user stories an
 ### Example of a report of an autotest
 
 <p align="center">
-  <img src="images/Allure Report steps.png" alt="Results demo" width="750">
+  <img src="images/Allure Report sample.png" alt="Results demo" width="750">
 </p>
 
 ### Attached request information example

@@ -4,13 +4,10 @@ import io.qameta.allure.Epic;
 import io.qameta.allure.Owner;
 import io.qameta.allure.Story;
 import jdk.jfr.Description;
-import models.*;
+import models.CartResponse;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import specs.Specs;
-
-import java.util.ArrayList;
-import java.util.List;
 
 import static helpers.CustomAllureListener.withCustomTemplates;
 import static io.qameta.allure.Allure.step;
@@ -22,24 +19,15 @@ import static tests.TestData.*;
 @Epic("API Fakestore")
 @Story("CRUD for carts")
 @Owner("Alena Shomanova")
-public class CRUDCartsTests {
+public class CRUDCartsTests extends TestBase {
     @Test
     @DisplayName("Correct addition of a new cart")
     @Description("POST /carts")
     void addCart() {
-        CartBody cartBody = new CartBody();
-
-        CartBody.ListProductsData product = new CartBody.ListProductsData();
-        product.setProductId(10);
-        product.setQuantity(2);
-        List<CartBody.ListProductsData> listProducts = new ArrayList<>();
-        listProducts.add(product);
-
-        cartBody.setUserId(defaultUserIdForCarts);
-        cartBody.setDate(defaultDate);
-        cartBody.setProducts(listProducts);
-
-        CartResponse cartAddResponse = step("Send a POST request", () ->
+        step("Prepare a body for a future cart", () ->
+                prepareCartBody(defaultIdForProducts, defaultProductQuantity)
+        );
+        CartResponse cartAddResponse = step("Send a POST request to add a cart with the prepared body", () ->
                 given()
                         .filter(withCustomTemplates())
                         .spec(Specs.requestSpec)
@@ -61,7 +49,7 @@ public class CRUDCartsTests {
     @DisplayName("Get the list of all carts in the database")
     @Description("GET /carts")
     void getAllCarts() {
-        step("Send a GET request", () ->
+        step("Send a GET request and check the output size", () ->
                 given()
                         .filter(withCustomTemplates())
                         .spec(Specs.requestSpec)
@@ -76,20 +64,12 @@ public class CRUDCartsTests {
     @DisplayName("Correct updating of a chosen cart")
     @Description("PUT /carts/7")
     void updateProductsInCart() {
-        CartBody cartBody = new CartBody();
-
-        CartBody.ListProductsData product = new CartBody.ListProductsData();
-        product.setProductId(10);
-        product.setQuantity(3);
-        List<CartBody.ListProductsData> listProducts = new ArrayList<>();
-        listProducts.add(product);
-
-        cartBody.setUserId(defaultUserIdForCarts);
-        cartBody.setDate(defaultDate);
-        cartBody.setProducts(listProducts);
+        step("Prepare a body for updating the cart with the given ID", () ->
+                prepareCartBody(defaultIdForProducts, defaultUpdatedProductQuantity)
+        );
 
         CartResponse updatedCartResponse =
-                step("Send a PUT request", () ->
+                step("Send a PUT request to update the cart using the prepared body", () ->
                         given()
                                 .filter(withCustomTemplates())
                                 .spec(Specs.requestSpec)
@@ -113,7 +93,7 @@ public class CRUDCartsTests {
     @DisplayName("Correct deletion of a chosen cart")
     @Description("DELETE /carts/7")
     void deleteCart() {
-        CartResponse deletedCartResponse = step("Send a DELETE request", () ->
+        CartResponse deletedCartResponse = step("Send a DELETE request to delete a cart with the given ID", () ->
                 given()
                         .filter(withCustomTemplates())
                         .spec(Specs.requestSpec)
