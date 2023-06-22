@@ -8,7 +8,6 @@ import org.junit.jupiter.api.BeforeAll;
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.codeborne.selenide.Configuration.baseUrl;
 import static tests.TestData.*;
 
 public class TestBase {

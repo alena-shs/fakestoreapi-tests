@@ -1,6 +1,5 @@
 package config;
 
-import com.codeborne.selenide.Configuration;
 import org.aeonbits.owner.ConfigFactory;
 
 import static com.codeborne.selenide.Configuration.baseUrl;
