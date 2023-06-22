@@ -26,8 +26,7 @@ public class CRUDProductsTests extends TestBase {
     @DisplayName("Correct addition of a new product")
     @Description("POST /products")
     void addProduct() {
-        step("Prepare a body for adding a new product", () ->
-                prepareProductBody()
+        step("Prepare a body for adding a new product", this::prepareProductBody
         );
         ProductResponse addProductResponse = step("Send a POST request to add a product with the prepared body", () ->
                 given()
